@@ -10,7 +10,7 @@ const SearchPage: React.FC = () => {
     const query = searchParams.get('q') || '';
 
 
-    const { data, isLoading, error } = useQuery({
+    const { data } = useQuery({
         queryKey: ['search', query],
         queryFn: async () => {
             if (!query) return [];

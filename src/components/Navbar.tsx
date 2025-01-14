@@ -7,12 +7,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
-interface Product {
-    id: number;
-    name: string;
-    description: string;
-    //... diğer product properties
- }
+
 
 const Navbar: React.FC = () => {
     const { t } = useTranslation();
