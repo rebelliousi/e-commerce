@@ -222,7 +222,7 @@ const Navbar: React.FC = () => {
                                 <li>
                                     <button
                                         className="block px-4 py-1 text-gray-700 hover:text-gray-500 w-full text-left"
-                                        onClick={() => handleLanguageChange("es")}
+                                        onClick={() => handleLanguageChange("ru")}
                                     >
                                         ru
                                     </button>

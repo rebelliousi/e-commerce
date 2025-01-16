@@ -1,19 +1,21 @@
 import React from 'react';
+import {lazy,Suspense} from "react"
 import { Routes, Route } from 'react-router-dom';
-import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-import Products from './components/Product';
-import ProductDetails from './components/ProductDetails';
-import Footer from "./components/Footer";
-import CategoryProducts from './components/CategoryProducts'; // Import the correct component
-import Contact from './components/Contact';
-import Categories from "./components/Categories"
-import SearchPage from "./components/SearchPage"
+const Navbar=lazy(()=>import("./components/Navbar"));
+const Slider=lazy(()=>import("./components/Slider"));
+const Products=lazy(()=>import('./components/Product')) 
+const ProductDetails=lazy(()=>import('./components/ProductDetails')) ;
+const Footer=lazy(()=>import("./components/Footer")) ;
+const CategoryProducts=lazy(()=>import('./components/CategoryProducts')); // Import the correct component
+const Contact=lazy(()=>import('./components/Contact')) ;
+const Categories=lazy(()=>import("./components/Categories")) 
+const SearchPage=lazy(()=>import("./components/SearchPage")) 
 
 
 const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <Suspense fallback={<div></div>}>
       <Navbar />
       <Routes>
         <Route path="/" element={
@@ -32,6 +34,7 @@ const App: React.FC = () => {
         <Route path="/search" element={<SearchPage />} /> {/* Search Page route */}
       </Routes>
       <Footer />
+      </Suspense>
     </div>
   );
 };
